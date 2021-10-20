@@ -8,6 +8,7 @@ COPY . .
 
 #Create user devops
 RUN adduser devops --disabled-password
+RUN npm install
 
 #Run with user devops
 USER devops
