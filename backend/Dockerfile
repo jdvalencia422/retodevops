@@ -13,5 +13,5 @@ RUN adduser devops --disabled-password
 USER devops
 
 #Expose app port
-EXPOSE 4200
+EXPOSE 3000
 CMD [ "node", "app.js" ]
