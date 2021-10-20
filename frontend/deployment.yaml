@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: "frontend-1"
-        image: "gcr.io/the-tree-beneath-329315/devops/frontend:73"
+        image: "#{containerimage}"
         ports:
         - containerPort: 4200
 ---
