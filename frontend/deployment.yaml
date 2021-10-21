@@ -71,3 +71,14 @@ spec:
   backend:
     serviceName: "frontend"
     servicePort: 4200
+  rules:
+  - host: "www.devopslab.tk"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 80
