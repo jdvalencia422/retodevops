@@ -7,12 +7,12 @@ WORKDIR /usr/src/app
 COPY . .
 
 #Create user devops
-RUN adduser devops --disabled-password
+#RUN adduser devops --disabled-password
 RUN npm install
 RUN npm install -g @angular/cli
 
 #Run with user devops
-USER devops
+#USER devops
 
 #Expose app port
 EXPOSE 4200
