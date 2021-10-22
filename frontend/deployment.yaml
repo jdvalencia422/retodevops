@@ -68,7 +68,6 @@ metadata:
   annotations:
     networking.gke.io/managed-certificates: "#{certificate}#"
     ingress.kubernetes.io/rewrite-target: /
-    ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
   - http:
