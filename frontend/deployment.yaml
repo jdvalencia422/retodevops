@@ -58,24 +58,3 @@ spec:
       # Optional field
       # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
       nodePort: 30007
----
-
-apiVersion: "extensions/v1beta1"
-kind: "Ingress"
-metadata:
-  name: "devopslab"
-  namespace: "default"
-  annotations:
-    networking.gke.io/managed-certificates: "#{certificate}#"
-    ingress.kubernetes.io/rewrite-target: /
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: frontend
-            port:
-              number: 4200
