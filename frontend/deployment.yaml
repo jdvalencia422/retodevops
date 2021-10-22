@@ -67,15 +67,18 @@ metadata:
   namespace: "default"
   annotations:
     networking.gke.io/managed-certificates: "#{certificate}#"
-    ingress.kubernetes.io/rewrite-target: /$2
+    ingress.kubernetes.io/rewrite-target: /$1
+    ingress.kubernetes.io/use-regex: "true"
 spec:
-  backend:
-    serviceName: "frontend"
-    servicePort: 4200
   rules:
-    - http:
-        paths:
-          - backend:
-              serviceName: frontend
-              servicePort: 4200
-            path: /(/|$)(.*)
+  - host: devopslab.tk
+    http:
+      paths:
+      - backend:
+          serviceName: frontend
+          servicePort: 4200
+        path: /r(/|$)(.*)
+      - backend:
+          serviceName: frontend
+          servicePort: 4200
+        path: /(.*)
