@@ -6,7 +6,8 @@ import swal from 'sweetalert2';
 	providedIn: 'root'
 })
 export class UserService {
-	url = 'http://backend.default.svc.cluster.local:3000/user';
+  
+	url = '#{backendpath}#';
 
 	constructor(private http: HttpClient) { }
 
