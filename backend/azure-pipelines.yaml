@@ -47,7 +47,6 @@ steps:
       -v "$(Build.ArtifactStagingDirectory):/reports:cached" \
       shiftleft/sast-scan scan --src /app \
       --out_dir /reports/CodeAnalysisLogs
-      chwon -R jdvalencia422 /home/jdvalencia422/ready/agents/_work/2/a/CodeAnalysisLogs
 
 
 
