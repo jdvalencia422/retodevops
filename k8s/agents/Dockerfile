@@ -22,8 +22,7 @@ RUN apt-get update \
         netcat \
         software-properties-common \
         wget \
-        python3-pip \
-	    unzip \
+	unzip \
         apt-transport-https \
         gnupg-agent \
         zip \
@@ -47,7 +46,7 @@ RUN apt-get update \
    stable" \
 && apt-get update \
 && apt-get install -y --allow-unauthenticated docker-ce docker-ce-cli containerd.io \
-&& curl -sL 12x -o /opt/nodesource_setup.sh \
+&& curl -sL https://deb.nodesource.com/setup_12.x -o /opt/nodesource_setup.sh \
 && chmod +x /opt/nodesource_setup.sh \
 && /opt/nodesource_setup.sh \
 && apt-get install nodejs \
@@ -62,15 +61,7 @@ RUN apt-get update \
 && wget -O /tmp/helm-v3.5.0-linux-amd64.tar.gz https://get.helm.sh/helm-v3.5.0-linux-amd64.tar.gz \
 && tar -zxvf /tmp/helm-v3.5.0-linux-amd64.tar.gz -C /tmp \
 && mv /tmp/linux-amd64/helm /usr/local/bin/helm \
-&& rm -rf /tmp/helm-v3.5.0-linux-amd64.tar.gz \
-&& add-apt-repository -y ppa:deadsnakes/ppa \
-&& apt-get -y update \
-&& apt-get -y install python3.7 \
-&& update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1 \
-&& update-alternatives --config python3 \
-&& pip3 install --upgrade pip \
-&& apt-get install -y python3-setuptools \
-&& apt-get -y install sudo
+&& rm -rf /tmp/helm-v3.5.0-linux-amd64.tar.gz
 
 WORKDIR /vsts_agent
 COPY ./start.sh .
