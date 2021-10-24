@@ -39,7 +39,7 @@ steps:
 
 - task: CmdLine@2
   displayName: "Perform Security Scan"
-#  continueOnError: "true"
+  continueOnError: true
   inputs:
     script: |
       docker run \
