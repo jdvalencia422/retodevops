@@ -13,8 +13,8 @@ trigger:
    include:
     - backend/*
 
-#variables:
-#  - group: variable
+variables:
+  - group: devopslab
 
 
 pool:
