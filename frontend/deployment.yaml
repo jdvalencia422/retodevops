@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: "frontend-1"
-        image: "#{containerimage}#"
+        image: "#{containerimage-frontend}#"
         ports:
         - containerPort: 4200
 ---
