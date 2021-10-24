@@ -48,14 +48,11 @@ steps:
       shiftleft/sast-scan scan --src /app \
       --out_dir /reports/CodeAnalysisLogs
 
-
-
 - task: PublishBuildArtifacts@1
   displayName: "Publish analysis logs"
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/CodeAnalysisLogs'
     ArtifactName: 'CodeAnalysisLogs Backend container'
-    publishLocation: 'FilePath'
     TargetPath: 'Container'
 
 - task: Docker@2
