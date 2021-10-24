@@ -26,7 +26,7 @@ steps:
     scantype: 'targetedScan'
     url: 'http://104.154.130.64'
     port: '4200'
-    threshold: '95'
+    threshold: '5'
 - task: qetza.replacetokens.replacetokens-task.replacetokens@4
   displayName: 'Replace variables back'
   inputs:
