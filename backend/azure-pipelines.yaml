@@ -43,7 +43,7 @@ steps:
     image: 'gcr.io/the-tree-beneath-329315/devops/backend:$(Build.SourceBranchName)'
     dockerfile: 'backend/Dockerfile'
     failBuild: false
-    customPolicyPath: '.anchore/policy.json'
+#    customPolicyPath: '.anchore/policy.json'
 
 - task: Docker@2
   displayName: push
