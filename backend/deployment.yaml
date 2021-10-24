@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: "backend-1"
-        image: "#{containerimage}#"
+        image: "#{containerimage-backend}#"
         ports:
         - containerPort: 3000
 
