@@ -45,24 +45,6 @@ steps:
     failBuild: false
     customPolicyPath: '.anchore/policy.json'
 
-# - task: CmdLine@2
-#   displayName: "Perform Security Scan"
-#   continueOnError: true
-#   inputs:
-#     script: |
-#       docker run \
-#       -v "$(Build.SourcesDirectory):/app:cached" \
-#       -v "$(Build.ArtifactStagingDirectory):/reports:cached" \
-#       shiftleft/sast-scan scan --src /app \
-#       --out_dir /reports/CodeAnalysisLogs
-
-# - task: PublishBuildArtifacts@1
-#   displayName: "Publish analysis logs"
-#   inputs:
-#     PathtoPublish: '$(Build.ArtifactStagingDirectory)/CodeAnalysisLogs'
-#     ArtifactName: 'CodeAnalysisLogs Backend container'
-#     TargetPath: 'Container'
-
 - task: Docker@2
   displayName: push
   inputs:
