@@ -47,12 +47,12 @@ steps:
     Dockerfile: backend/Dockerfile
     tags: '$(Build.SourceBranchName)'
 
-- task: Anchore@0
-  displayName: container security backend
-  inputs:
-    image: 'gcr.io/the-tree-beneath-329315/devops/backend:$(Build.SourceBranchName)'
-    dockerfile: 'backend/Dockerfile'
-    failBuild: false
+#- task: Anchore@0
+#  displayName: container security backend
+#  inputs:
+#    image: 'gcr.io/the-tree-beneath-329315/devops/backend:$(Build.SourceBranchName)'
+#    dockerfile: 'backend/Dockerfile'
+#    failBuild: false
 #    customPolicyPath: '.anchore/policy.json'
 
 - task: Docker@2
@@ -64,12 +64,12 @@ steps:
     Dockerfile: frontend/Dockerfile
     tags: '$(Build.SourceBranchName)'
 
-- task: Anchore@0
-  displayName: container security frontend
-  inputs:
-    image: 'gcr.io/the-tree-beneath-329315/devops/frontend:$(Build.SourceBranchName)'
-    dockerfile: 'frontend/Dockerfile'
-    failBuild: false
+#- task: Anchore@0
+#  displayName: container security frontend
+#  inputs:
+#    image: 'gcr.io/the-tree-beneath-329315/devops/frontend:$(Build.SourceBranchName)'
+#    dockerfile: 'frontend/Dockerfile'
+#    failBuild: false
 #    customPolicyPath: '.anchore/policy.json'
 
 - task: Docker@2
