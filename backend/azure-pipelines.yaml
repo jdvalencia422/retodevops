@@ -45,7 +45,7 @@ steps:
     repository: 'the-tree-beneath-329315/devops/backend'
     command: build
     Dockerfile: backend/Dockerfile
-    tags: '$(Build.SourceBranchName)'
+#    tags: '$(Build.SourceBranchName)-$(Build.BuildNumber)'
 
 #- task: Anchore@0
 #  displayName: container security backend
@@ -62,7 +62,7 @@ steps:
     repository: 'the-tree-beneath-329315/devops/frontend'
     command: build
     Dockerfile: frontend/Dockerfile
-    tags: '$(Build.SourceBranchName)'
+#    tags: '$(Build.SourceBranchName)-$(Build.BuildNumber)'
 
 #- task: Anchore@0
 #  displayName: container security frontend
@@ -77,7 +77,7 @@ steps:
   inputs:
     containerRegistry: 'gcp-registry'
     repository: 'the-tree-beneath-329315/devops/backend'
-    tags: '$(Build.SourceBranchName)'
+#    tags: '$(Build.SourceBranchName)'
     command: push
 
 - task: Kubernetes@1
@@ -94,7 +94,7 @@ steps:
   inputs:
     containerRegistry: 'gcp-registry'
     repository: 'the-tree-beneath-329315/devops/frontend'
-    tags: '$(Build.SourceBranchName)'
+ #   tags: '$(Build.SourceBranchName)'
     command: push
 
 - task: Kubernetes@1
