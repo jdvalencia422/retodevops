@@ -104,3 +104,9 @@ steps:
     command: apply
     useConfigurationFile: true
     configuration: frontend/deployment.yaml
+
+- task: owaspzap@1
+  inputs:
+    scantype: 'targetedScan'
+    url: 'http://104.154.130.64/'
+    port: '4200'
