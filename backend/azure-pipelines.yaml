@@ -62,12 +62,6 @@ steps:
     repository: 'the-tree-beneath-329315/devops/backend'
     command: push
 
-- task: KubernetesManifest@0
-  displayName: deploy
-  inputs:
-    kubernetesServiceConnection: k8s
-    manifests: backend/deployment.yaml
-
 - task: Kubernetes@1
   displayName: 'kubectl apply'
   inputs:
