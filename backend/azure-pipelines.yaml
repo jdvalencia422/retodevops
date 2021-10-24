@@ -20,12 +20,13 @@ variables:
 pool:
   name: devopslab
 steps:
-
+    
 - task: owaspzap@1
   inputs:
     scantype: 'targetedScan'
     url: 'http://104.154.130.64'
     port: '4200'
+    threshold: '95'
 - task: qetza.replacetokens.replacetokens-task.replacetokens@4
   displayName: 'Replace variables back'
   inputs:
