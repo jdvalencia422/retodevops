@@ -45,12 +45,12 @@ stages:
         repository: 'the-tree-beneath-329315/devops/backend'
         command: build
         Dockerfile: backend/Dockerfile
-        tags: '$(Build.SourceBranchName)-$(Build.BuildNumber)'
+        tags: '$(Build.BuildNumber)'
  
     - task: Anchore@0
       displayName: container security backend
       inputs:
-        image: 'gcr.io/the-tree-beneath-329315/devops/backend:$(Build.SourceBranchName)-$(Build.BuildNumber)'
+        image: 'gcr.io/the-tree-beneath-329315/devops/backend:$(Build.BuildNumber)'
         dockerfile: 'backend/Dockerfile'
         failBuild: false
     #    customPolicyPath: '.anchore/policy.json'
@@ -60,7 +60,7 @@ stages:
       inputs:
         containerRegistry: 'gcp-registry'
         repository: 'the-tree-beneath-329315/devops/backend'
-        tags: '$(Build.SourceBranchName)-$(Build.BuildNumber)'
+        tags: '$(Build.BuildNumber)'
         command: push
 
 
@@ -97,12 +97,12 @@ stages:
         repository: 'the-tree-beneath-329315/devops/frontend'
         command: build
         Dockerfile: frontend/Dockerfile
-        tags: '$(Build.SourceBranchName)-$(Build.BuildNumber)'
+        tags: '$(Build.BuildNumber)'
 
     - task: Anchore@0
       displayName: container security frontend
       inputs:
-        image: 'gcr.io/the-tree-beneath-329315/devops/frontend:$(Build.SourceBranchName)-$(Build.BuildNumber)'
+        image: 'gcr.io/the-tree-beneath-329315/devops/frontend:$(Build.BuildNumber)'
         dockerfile: 'frontend/Dockerfile'
         failBuild: false
     #    customPolicyPath: '.anchore/policy.json'
@@ -112,7 +112,7 @@ stages:
       inputs:
         containerRegistry: 'gcp-registry'
         repository: 'the-tree-beneath-329315/devops/frontend'
-        tags: '$(Build.SourceBranchName)-$(Build.BuildNumber)'
+        tags: '$(Build.BuildNumber)'
         command: push
 
     - task: Kubernetes@1
