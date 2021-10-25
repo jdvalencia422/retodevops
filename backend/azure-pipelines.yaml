@@ -22,7 +22,7 @@ pool:
   
 stages:
 - stage: build_deploy_backend_dev
-  displayName: 'Build and deploy backend DEV'
+  displayName: 'Build-Deploy Backend DEV'
   jobs:
   - job: Deploy
     pool:
@@ -74,7 +74,7 @@ stages:
 
 
 - stage: build_deploy_frontend_dev
-  displayName: 'Build and deploy frontend DEV'
+  displayName: 'Build-Deploy Frontend DEV'
   jobs:
   - job: Deploy
     pool:
@@ -99,12 +99,12 @@ stages:
         Dockerfile: frontend/Dockerfile
         tags: '$(Build.BuildNumber)'
 
-    - task: Anchore@0
-      displayName: container security frontend
-      inputs:
-        image: 'gcr.io/the-tree-beneath-329315/devops/frontend:$(Build.BuildNumber)'
-        dockerfile: 'frontend/Dockerfile'
-        failBuild: false
+#    - task: Anchore@0
+#      displayName: container security frontend
+#      inputs:
+#        image: 'gcr.io/the-tree-beneath-329315/devops/frontend:$(Build.BuildNumber)'
+#        dockerfile: 'frontend/Dockerfile'
+#        failBuild: false
     #    customPolicyPath: '.anchore/policy.json'
     
     - task: Docker@2
@@ -125,7 +125,7 @@ stages:
 
 
 - stage: security_test_frontend_dev
-  displayName: 'Security Test frontend DEV'
+  displayName: 'SecurityTest Frontend DEV'
   jobs:
   - job: SecurityTest
     pool:
