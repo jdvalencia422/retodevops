@@ -22,7 +22,7 @@ pool:
   
 stages:
 - stage: Build and deploy backend DEV
-  displayName: 'Build and deploy backend DEV'
+  displayName: Build and deploy backend DEV
   jobs:
   - job: Deploy
     pool:
