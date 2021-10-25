@@ -124,19 +124,19 @@ stages:
         configuration: frontend/deployment.yaml
 
 
-- stage: security_test_frontend_dev
-  displayName: 'SecurityTest Frontend DEV'
-  jobs:
-  - job: SecurityTest
-    pool:
-      name: devopslab
-    steps:
-    - task: owaspzap@1
-      inputs:
-        scantype: 'targetedScan'
-        url: 'http://104.154.130.64'
-        port: '4200'
-        threshold: '120'
+#- stage: security_test_frontend_dev
+#  displayName: 'SecurityTest Frontend DEV'
+#  jobs:
+#  - job: SecurityTest
+#    pool:
+#      name: devopslab
+#    steps:
+#    - task: owaspzap@1
+#      inputs:
+#        scantype: 'targetedScan'
+#        url: 'http://104.154.130.64'
+#        port: '4200'
+#        threshold: '120'
 
 
 
