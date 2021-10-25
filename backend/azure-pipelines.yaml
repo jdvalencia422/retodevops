@@ -20,15 +20,19 @@ variables:
 pool:
   name: devopslab
   
-stages:
 
-  - stage: owaspzap
-  - task: owaspzap@1
-    inputs:
-      scantype: 'targetedScan'
-      url: 'http://104.154.130.64'
-      port: '4200'
-      threshold: '120'
+- stage: Deploy
+  jobs:
+  - job: Deploy
+    pool:
+      name: devopslab
+    steps:
+    - task: owaspzap@1
+      inputs:
+        scantype: 'targetedScan'
+        url: 'http://104.154.130.64'
+        port: '4200'
+        threshold: '120'
   
 steps:
 
