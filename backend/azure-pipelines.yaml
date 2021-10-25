@@ -72,7 +72,7 @@ stages:
         configuration: backend/deployment.yaml
 
 
-- stage: Build and deploy frontend DEV
+- stage: build_deploy_frontend_dev
   displayName: 'Build and deploy frontend DEV'
   jobs:
   - job: Deploy
@@ -123,7 +123,7 @@ stages:
         useConfigurationFile: true
         configuration: frontend/deployment.yaml
 
-- stage: Security test frontend DEV
+- stage: security_test_frontend_dev
   displayName: 'Security Test frontend DEV'
   jobs:
   - job: Security Test frontend DEV
