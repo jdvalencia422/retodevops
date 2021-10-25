@@ -50,7 +50,7 @@ stages:
     - task: Anchore@0
       displayName: container security backend
       inputs:
-        image: 'gcr.io/the-tree-beneath-329315/devops/backend:tags:$(Build.SourceBranchName)-$(Build.BuildNumber)'
+        image: 'gcr.io/the-tree-beneath-329315/devops/backend:$(Build.SourceBranchName)-$(Build.BuildNumber)'
         dockerfile: 'backend/Dockerfile'
         failBuild: false
     #    customPolicyPath: '.anchore/policy.json'
