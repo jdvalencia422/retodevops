@@ -21,7 +21,7 @@ pool:
   name: devopslab
   
 stages:
-- stage: 'Build and deploy backend DEV'
+- stage: builddev
   displayName: 'Build and deploy backend DEV'
   jobs:
   - job: Deploy
