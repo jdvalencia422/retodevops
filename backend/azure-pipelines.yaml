@@ -20,7 +20,7 @@ variables:
 pool:
   name: devopslab
   
-
+stages:
 - stage: Deploy
   jobs:
   - job: Deploy
