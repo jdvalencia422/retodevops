@@ -123,10 +123,11 @@ stages:
         useConfigurationFile: true
         configuration: frontend/deployment.yaml
 
+
 - stage: security_test_frontend_dev
   displayName: 'Security Test frontend DEV'
   jobs:
-  - job: Security Test frontend DEV
+  - job: SecurityTest
     pool:
       name: devopslab
     steps:
